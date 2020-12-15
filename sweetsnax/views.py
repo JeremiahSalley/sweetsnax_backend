@@ -30,7 +30,7 @@ def order_detail(request, pk):
 #         serializer.save()
 #     return Response(serializer.data)
 
-class OrderList(generics.ListCreateAPIViews):
+class OrderList(generics.ListCreateAPIView):
     queryset = Order.objects.all()
     serializer_class = OrderSerializer
 
