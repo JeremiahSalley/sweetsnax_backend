@@ -1,0 +1,1 @@
+web: gunicorn sweetsnax_django.wsgi 
