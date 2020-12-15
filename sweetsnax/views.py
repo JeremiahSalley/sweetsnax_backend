@@ -5,6 +5,7 @@ from rest_framework.response import Response
 from .models import Order
 from .forms import OrderForm
 from .serializers import OrderSerializer
+from rest_framework import generics 
 # Create your views here.
 
 
@@ -22,12 +23,16 @@ def order_detail(request, pk):
 
 
 @api_view(['POST'])
-def orderCreate(request):
-    serializer = OrderSerializer(data=request.data)
+# def orderCreate(request):
+#     serializer = OrderSerializer(data=request.data)
 
-    if serializer.is_valid():
-        serializer.save()
-    return Response(serializer.data)
+#     if serializer.is_valid():
+#         serializer.save()
+#     return Response(serializer.data)
+
+class OrderList(generics.ListCreateAPIViews):
+    queryset = Order.objects.all()
+    serializer_class = OrderSerializer
 
 @api_view(['PUT'])
 def orderUpdate(request, pk):
