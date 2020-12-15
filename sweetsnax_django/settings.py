@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'sweetsnax',
     'rest_framework',
-    'corsheaders',
+    
 ]
 
 MIDDLEWARE = [
@@ -57,7 +58,7 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = (
-    'localhost:3000'
+    "http://localhost:3000",
 )
 
 ROOT_URLCONF = 'sweetsnax_django.urls'
