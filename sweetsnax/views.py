@@ -29,7 +29,7 @@ def orderCreate(request):
         serializer.save()
     return Response(serializer.data)
 
-@api_view(['POST'])
+@api_view(['PUT'])
 def orderUpdate(request, pk):
     order = Order.objects.get(id=pk)
     serializer = OrderSerializer(instance=order, data=request.data)

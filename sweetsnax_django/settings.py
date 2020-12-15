@@ -85,18 +85,18 @@ WSGI_APPLICATION = 'sweetsnax_django.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-# DATABASES = {}
-# DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+DATABASES = {}
+DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'snax',
-        'USER': 'snaxuser',
-        'PASSWORD': 'sweet',
-        'HOST': 'localhost'
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'snax',
+#         'USER': 'snaxuser',
+#         'PASSWORD': 'sweet',
+#         'HOST': 'localhost'
+#     }
+# }
 
 
 # Password validation
