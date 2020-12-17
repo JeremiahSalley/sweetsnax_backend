@@ -25,9 +25,9 @@ class LoginView(generics.ListCreateAPIView):
 
 
     def post(self, request, *args, **kwargs):
-        username = request.data.get("username", "")
+        email = request.data.get("email", "")
         password = request.data.get("password", "")
-        user = authenticate(request, username=username, password=password)
+        user = authenticate(request, email=email, password=password)
         if user is not None:
             # login saves the user’s ID in the session,
             # using Django’s session framework.
