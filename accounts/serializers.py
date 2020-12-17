@@ -5,7 +5,7 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('password', 'email')
+        fields = ('email','password' )
 
 class TokenSerializer(serializers.Serializer):
     token = serializers.CharField(max_length=255)
