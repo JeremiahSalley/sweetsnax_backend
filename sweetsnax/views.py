@@ -42,7 +42,7 @@ class OrderLista(generics.ListCreateAPIView):
 
 @api_view(['PUT'])
 def orderUpdate(request, pk):
-    order = Order.objects.get(id=pk)
+    order = Order.objects.filter(email=pk)
     serializer = OrderSerializer(instance=order, data=request.data)
   
 
@@ -52,7 +52,7 @@ def orderUpdate(request, pk):
 
 @api_view(['DELETE'])
 def orderDelete(request, pk):
-    order = Order.objects.get(id=pk)
+    order = Order.objects.get(email=pk)
     order.delete()
     return Response(serializer.data)
 

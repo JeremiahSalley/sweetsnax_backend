@@ -88,20 +88,20 @@ WSGI_APPLICATION = 'sweetsnax_django.wsgi.application'
 
 #for deploying to heroku 
 
-# DATABASES = {}
-# DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+DATABASES = {}
+DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
 #for local server and testing 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'snax',
-        'USER': 'snaxuser',
-        'PASSWORD': 'sweet',
-        'HOST': 'localhost'
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'snax',
+#         'USER': 'snaxuser',
+#         'PASSWORD': 'sweet',
+#         'HOST': 'localhost'
+#     }
+# }
 
 
 # Password validation
