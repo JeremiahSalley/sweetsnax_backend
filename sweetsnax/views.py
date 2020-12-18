@@ -19,10 +19,12 @@ def order_list(request):
 
 @api_view(['GET'])
 def order_detail(request, pk):
-    order = Order.objects.get(id=pk)
-    serializer = OrderSerializer(order, many=False)
+    order = Order.objects.filter(email=pk)
+    print(order)
+    serializer = OrderSerializer(order, many=True)
     
-    return Response(serializer.data)
+    # return Response(serializer.data)
+    return JsonResponse(serializer.data, safe = False)
 
 
 # @api_view(['POST'])
